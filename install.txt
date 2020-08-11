@@ -1,0 +1,2 @@
+pip install wolframalpha
+pip install google-cloud-vision
