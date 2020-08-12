@@ -1,9 +1,11 @@
 import wolframalpha
 
-input = input("Digite an operation: ")
+def wolframAlpha(input):
+    
+    key = "93P3YQ-J9RYAGHPRK "
+    client = wolframalpha.Client(key)
+    request = client.query(input)
+    output = next(request.results).text
+    return output
 
-key = "Your WolframAlpha's Key "
-client = wolframalpha.Client(key)
-request = client.query(input)
-output = next(request.results).text
-print(output)
+
