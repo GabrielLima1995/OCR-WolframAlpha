@@ -10,7 +10,7 @@ def math_ocr(file_path):
     image_uri = "data:image/jpg;base64," + base64.b64encode(open(file_path, "rb").read()).decode()
     r = requests.post("https://api.mathpix.com/v3/text",
     data=json.dumps({'src': image_uri}),
-    headers={"app_id": "API Project", "app_key": "API KEY",
+    headers={"app_id": "<YOUR API PROJECT >", "app_key": "<YOUR API KEY>",
     "Content-type": "application/json"})
     #string = json.dumps(json.loads(r.text), indent=4, sort_keys=True)
     string = r.text
@@ -21,7 +21,7 @@ def math_ocr(file_path):
 
 def wolframAlpha(input):
     
-    key = "<Your wolframAlpha's Key"
+    key = "<Your wolframAlpha's Key>"
     client = wolframalpha.Client(key)
     request = client.query(input)
     output = next(request.results).text
